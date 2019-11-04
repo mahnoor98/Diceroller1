@@ -11,11 +11,19 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+    private int point = 0;
+    private TextView countplaced;
+    private TextView countview;
+    private EditText userinput;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        userinput = (EditText) findViewById(R.id.userinput);
+        countplaced = (TextView) findViewById(R.id.point);
+        countview = (TextView) findViewById(R.id.cview);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,9 +73,21 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = this.findViewById(R.id.numberTextView);
 
         Random r = new Random();
-        int number = r.nextInt(6);
+        int num = r.nextInt(6);
 
-        tv.setText(Integer.toString(number));
+        tv.setText(Integer.toString(num));
+
+        int n = Integer.parseInt(userinput.getText().toString());
+
+        if (n < 1 || n > 6) {
+            Toast.makeText(this, "Invalid input, number must be within range", Toast.LENGTH_SHORT).show();
+        } else if (n == num) {
+            Toast.makeText(this, "Congratulations ! Numbers match bossman", Toast.LENGTH_SHORT).show();
+            point = point + 1;
+            countplaced.setText(Integer.toString(point));
+        }
+
+
 
     }
 

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="numberTextView" type="id" />
+    <item name="userinput" type="id" />
+    <item name="point" type="id" />
+    <item name="cview" type="id" />
+    <item name="pointcounter" type="id" />
 </resources>
