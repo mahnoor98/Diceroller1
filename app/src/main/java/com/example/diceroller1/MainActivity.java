@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = this.findViewById(R.id.numberTextView);
 
         Random r = new Random();
-        int num = r.nextInt(6);
+        int num = r.nextInt(6)+1;
 
         tv.setText(Integer.toString(num));
 
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (n == num) {
             Toast.makeText(this, "Congratulations ! Numbers match bossman", Toast.LENGTH_SHORT).show();
             point = point + 1;
-            countplaced.setText(Integer.toString(point));
+            countplaced.setText("Score: " +Integer.toString(point));
         }
 
 
