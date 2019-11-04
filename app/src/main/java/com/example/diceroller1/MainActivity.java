@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView countplaced;
     private TextView countview;
     private EditText userinput;
+    private TextView listview;
 
 
     @Override
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         userinput = (EditText) findViewById(R.id.userinput);
         countplaced = (TextView) findViewById(R.id.point);
         countview = (TextView) findViewById(R.id.cview);
+        listview = (TextView) findViewById(R.id.ls);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -86,9 +89,28 @@ public class MainActivity extends AppCompatActivity {
             point = point + 1;
             countplaced.setText("Score: " +Integer.toString(point));
         }
+    }
 
+    public void on_butoon_click2(View view){
 
+        ArrayList<String> list = new ArrayList<>();
+        list.add("1) If you could go anywhere in the world, where would you go?");
+        list.add("2) If you were stranded on a desert island, what three things would you want to take with you?");
+        list.add("3) If you could eat only one food for the rest of your life, what would that be?");
+        list.add("4) If you won a million dollars, what is the first thing you would buy?");
+        list.add("5) If you could spaned the day with one fictional character, who would it be?");
+        list.add("6) If you found a magic lantern and a genie gave you three wishes, what would you wish?");
 
+        Random random = new Random();
+
+        int numberOfItems = 1;
+
+        for (int i = 0; i < numberOfItems; i++) {
+
+            int randomIndex = random.nextInt(list.size());
+            String Element = list.get(randomIndex);
+            listview.setText(Element);
+        }
     }
 
 }

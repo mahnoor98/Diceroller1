@@ -5,4 +5,5 @@
     <item name="point" type="id" />
     <item name="cview" type="id" />
     <item name="pointcounter" type="id" />
+    <item name="ls" type="id" />
 </resources>
