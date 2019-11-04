@@ -80,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
         int n = Integer.parseInt(userinput.getText().toString());
 
         if (n < 1 || n > 6) {
-            Toast.makeText(this, "Invalid input, number must be within range", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Invalid input, must be between 1-6 range", Toast.LENGTH_SHORT).show();
         } else if (n == num) {
-            Toast.makeText(this, "Congratulations ! Numbers match bossman", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Congratulations ! Numbers match XD", Toast.LENGTH_SHORT).show();
             point = point + 1;
             countplaced.setText("Score: " +Integer.toString(point));
         }
